@@ -29,4 +29,28 @@ if __name__ == '__main__':
     result.sort()
     for name in result:
         print(name)
- 
+        
+############################################################################################################        
+#优化
+#优化
+#优化
+
+if __name__ == '__main__':
+    students = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        students.append([name, score])
+
+    #sort - 按照从小到大排序
+    #获取所有成绩并去重，排序
+    scores = sorted(set([score for name, score in students]))
+
+    #获取第二低成绩
+    second_lowest = scores[1]
+
+    #获取所有第二低成绩的学生并排序
+    result = sorted([name for name,score in students if score == second_lowest])
+
+    for name in result:
+        print(name)
