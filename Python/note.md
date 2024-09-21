@@ -14,3 +14,20 @@ x = 5
 [x for x in range(3)]
 print(x)  # 打印 2，列表生成式内部的 x 覆盖了外部 x 的值
 ```
+
+list的append是引用（指向内存地址），而非复制。
+当你将一个对象 append 到列表中时，实际上是将该对象的引用添加到列表中，而不是将对象本身的内容复制一份。
+所以可以使用list2.append(list1.copy())   # 添加 list1 的副本
+
+```python
+list1 = [1, 2, 3]
+list2 = []
+
+for _ in range(3):
+    list2.append(list1)
+
+print(list2)  # 输出 [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+
+list1.append(4)  # 修改 list1
+print(list2)  # 输出 [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
+```
