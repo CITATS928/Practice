@@ -20,3 +20,10 @@ iterable= sorted(in_put[0])
 combi = itertools.combinations_with_replacement(iterable,length)
 for element in combi:
     print(''.join(element))
+
+
+
+#优化
+#变量命名优化：in_put 改为更有意义的名 -> input_data
+#去除不必要的中间变量：combi 变量可以直接在循环中使用
+#    for element in itertools.combinations_with_replacement(iterable,length):
