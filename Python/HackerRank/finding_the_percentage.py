@@ -22,3 +22,23 @@ if __name__ == '__main__':
             result = format((sumN/3), '.2f')
             print(result)
 
+
+#优化
+#去除不必要的循环：直接访问字典中的value
+#避免硬编码：使用len()获取长度
+"""
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+
+    #获取指定学生的成绩
+    scores = student_marks[query_name]
+    #计算平均成绩
+    result = sum(scores) / len(scores)
+    print(f"{average:.2f}")
+"""
