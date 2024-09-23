@@ -20,10 +20,30 @@ import sys
 import itertools
 
 in_put = sys.stdin.read().split()
-#print(in_put)
 sorted_input0 = sorted(''.join(in_put[0]))
-#combi=itertools.combinations(sorted_input0,int(in_put[1]))
+
 for n in range(1,int(in_put[1])+1):
     combi1 = itertools.combinations(sorted_input0,n)
     for element in combi1:
         print(''.join(element))
+
+
+#优化
+"""
+import itertools
+import sys
+
+# 读取输入
+input_data = sys.stdin.read().split()
+
+#sort
+sorted_input = sorted(input_data[0])
+
+#get lenth
+length = int(input_data[1])
+
+#获取所有组合(1~length)
+for i in range(1, length + 1):
+    for combination in itertools.combinations(sorted_input, i):
+        print("".join(combination))
+"""
