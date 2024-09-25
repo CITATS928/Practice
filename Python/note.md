@@ -15,6 +15,7 @@ x = 5
 print(x)  # 打印 2，列表生成式内部的 x 覆盖了外部 x 的值
 ```
 
+**list append**
 list的append是引用（指向内存地址），而非复制。
 当你将一个对象 append 到列表中时，实际上是将该对象的引用添加到列表中，而不是将对象本身的内容复制一份。
 所以可以使用list2.append(list1.copy())   # 添加 list1 的副本
@@ -31,3 +32,13 @@ print(list2)  # 输出 [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
 list1.append(4)  # 修改 list1
 print(list2)  # 输出 [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
 ```
+
+**itertools groupby**:
+itertools.groupby(iterable, key=None)
+
+用于将连续的相同元素分组。它对于按某个键对数据进行分组非常有用，尤其在对已经排序的序列进行分组时表现良好。
+
+注意事项：
+
+1. groupby 只对相邻的相同元素进行分组，因此通常需要先对数据进行排序。
+2. groupby 返回的是一个迭代器，它生成 (key, group) 的元组，其中 key 是分组的键，group 是分组的元素。
