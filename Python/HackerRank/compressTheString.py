@@ -21,3 +21,27 @@ for key,group in gb:
     result +='('+str(len(list(group)))+', '+str(key)+') '
 
 print(result)
+
+
+#优化
+#1. 变量命名优化：gb 改为更有意义的名 -> grouped
+#2. 使用.strip()去除多余的空格
+#3. 使用List Comprehension, 提高效率
+#4. 使用str.join() for String Concatenation
+
+"""
+import itertools
+import sys
+
+# 读取输入
+input_data = sys.stdin.read().strip()
+
+# 使用groupby函数
+grouped = itertools.groupby(input_data)
+
+# 使用List Comprehension
+result = [(len(list(group)), key) for key, group in grouped]
+
+# 使用str.join() for String Concatenation
+print(" ".join(f"({count}, {key})" for count, key in result))
+"""
