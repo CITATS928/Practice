@@ -86,3 +86,13 @@ FROM financials;
 -- 返回每个产品的名字及其利润或亏损的绝对值
 ```
 
+##### **ROUND(number, decimals)**
+
+用于控制数值的精度并保留指定的小数位数
+Example:
+
+```sql  
+SELECT ROUND(value, 4) 
+FROM table_name;
+```
+
