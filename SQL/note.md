@@ -4,7 +4,7 @@
 ‘is’通常用于null值和bool值的比较
 ’=‘用于字符串和数字的比较
 
-### 数学运算相关函数
+### MATH
 
 #### 取余
 
@@ -93,6 +93,26 @@ Example:
 
 ```sql  
 SELECT ROUND(value, 4) 
+FROM table_name;
+```
+
+##### **TRUNCATE(number, decimals)**
+
+用于截断数值并保留指定的小数位数，会删除多余的小数位，而不是四舍五入
+Example:
+
+```sql
+SELECT TRUNCATE(value, 4)
+FROM table_name;
+```
+
+##### **FORMAT(number, decimals)**
+
+用于格式化数值并保留指定的小数位数, returns a string
+Example:
+
+```sql
+SELECT FORMAT(value, 4)
 FROM table_name;
 ```
 
