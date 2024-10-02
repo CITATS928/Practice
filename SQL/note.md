@@ -1,4 +1,6 @@
-
+# TODO
+窗口函数
+CTE
 
 ‘is’ and ‘=’
 ‘is’通常用于null值和bool值的比较
