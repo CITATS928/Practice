@@ -6,9 +6,7 @@ CTE
 ‘is’通常用于null值和bool值的比较
 ’=‘用于字符串和数字的比较
 
-### MATH
-
-#### 取余
+#### MATH
 
 ##### **MOD(number, divisor)**
 
@@ -117,4 +115,24 @@ Example:
 SELECT FORMAT(value, 4)
 FROM table_name;
 ```
+
+#### STRING operation
+
+##### **REPLACE(string, substring, new_substring)**
+
+- string: 原始的string
+- substring: 要查找的并替换的substring
+- new_substring: 要替换substring的
+
+```sql
+SELECT REPLACE('Hello World', 'World', 'SQL');  -- return 'Hello SQL'
+
+
+SELECT REPLACE('100200', '0', '');  -- return '12'
+```
+
+##### CONCAT()
+
+##### SUBSTRING()
+
 
