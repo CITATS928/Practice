@@ -135,4 +135,32 @@ SELECT REPLACE('100200', '0', '');  -- return '12'
 
 ##### SUBSTRING()
 
+#### CONVERT function
 
+##### **CAST(expression AS data_type)**
+
+- expression: 要转换的表达式
+- data_type: 要转换的数据类型
+  - CHAR(n)
+  - DECIMAL(n)
+  - SIGNED(n)
+  - UNSIGNED(n)
+  - DATE
+  - DATETIME
+  - TIME
+  - BINARY(n)
+  - JSON
+
+```sql
+-- 将一个整数转换为字符串
+SELECT CAST(my_column AS CHAR) FROM my_table;
+
+SELECT CAST(123.45 AS INT);  -- return 123
+SELECT CAST('123' AS INT);  -- return 123
+```
+
+##### CONVERT()
+
+##### TO_CHAR()
+
+##### TO_DATE()
