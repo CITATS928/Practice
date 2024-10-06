@@ -164,3 +164,22 @@ SELECT CAST('123' AS INT);  -- return 123
 ##### TO_CHAR()
 
 ##### TO_DATE()
+
+#### JOIN
+
+##### **INNER JOIN**
+
+```sql
+SELECT column_name(s)
+FROM table1
+<JOIN_TYPE> JOIN table2
+ON table1.column_name = table2.column_name
+WHERE <condition>;
+```
+
+- INNER JOIN：只返回两个表中匹配的行。
+- LEFT JOIN：返回左表的所有行，即使右表没有匹配。
+- RIGHT JOIN：返回右表的所有行，即使左表没有匹配。
+- FULL JOIN：返回两个表中的所有行，没有匹配的地方用 NULL 填充。
+- CROSS JOIN：
+- SELF JOIN：
