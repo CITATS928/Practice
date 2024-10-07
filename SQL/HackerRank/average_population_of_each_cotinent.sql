@@ -11,3 +11,5 @@ GROUP BY country.continent
 
 /*
 note:
+当同时使用aggregate function（ex: avg), select语句中未聚合的其他列必须包含在group by中
+*/
