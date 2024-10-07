@@ -235,3 +235,17 @@ Result:
 | Alice    | 5000   | Average salary  |
 | Bob      | 3000   | Average salary  |
 | David    | 7000   | High salary     |
+
+##### **CASE IN WHERE (Example)**
+
+```sql
+SELECT *
+FROM Employees
+WHERE 
+  CASE
+    WHEN Salary > 5000 THEN Salary
+    ELSE NULL
+  END IS NOT NULL;
+```
+
+Return all employees with a salary greater than 5000.
