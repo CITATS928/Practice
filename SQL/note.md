@@ -200,3 +200,38 @@ SELECT
   END
 FROM table_name;
 ```
+
+##### **CASE IN SELECT (Example)**
+
+Table:
+
+| Employee | Salary |
+|----------|--------|
+| Charlie  | 1000   |
+| Alice    | 5000   |
+| Bob      | 3000   |
+| David    | 7000   |
+
+- If the salary is greater than 5000, return "High salary".
+- If the salary is between 3000 and 5000, return "Average salary".
+- Otherwise, return "Low salary".
+
+```sql
+SELECT Employee,
+       Salary,
+       CASE
+         WHEN Salary > 5000 THEN 'High salary'
+         WHEN Salary BETWEEN 3000 AND 5000 THEN 'Average salary'
+         ELSE 'Low salary'
+       END AS Salary_Category
+FROM Employees;
+```
+
+Result:
+
+| Employee | Salary | Salary_Category |
+|----------|--------|-----------------|
+| Charlie  | 1000   | Low salary      |
+| Alice    | 5000   | Average salary  |
+| Bob      | 3000   | Average salary  |
+| David    | 7000   | High salary     |
