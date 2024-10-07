@@ -183,3 +183,20 @@ WHERE <condition>;
 - FULL JOIN：返回两个表中的所有行，没有匹配的地方用 NULL 填充。
 - CROSS JOIN：
 - SELF JOIN：
+
+#### CASE
+
+在 SQL 查询中执行 if-then-else 逻辑
+可以在SQL查询的不同部分使用 CASE 语句，如 SELECT、WHERE 和 ORDER BY 子句。
+
+Basic Syntax Example:
+
+```sql
+SELECT
+  CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    ELSE resultN  -- Optional
+  END
+FROM table_name;
+```
