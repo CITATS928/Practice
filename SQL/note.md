@@ -272,3 +272,19 @@ Result:
 | Bob      | 3000   |
 | Charlie  | 1000   |
 
+##### **CASE IN JOIN (Example)**
+
+假设有2个表，Order和Costumer。希望根据订单类型的不同把他们join起来。比如订单类型是‘Online’，则join on email，如果是‘InStore’，则join on costomer_id。
+
+```sql
+SELECT o.order_id, c.customer_name
+FROM Orders o
+JOIN Customers c
+ON 
+  CASE 
+    WHEN o.order_type = 'Online' THEN o.email = c.email
+    WHEN o.order_type = 'In-Store' THEN o.customer_id = c.customer_id
+  END;
+```
+
+
