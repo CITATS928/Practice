@@ -249,3 +249,26 @@ WHERE
 ```
 
 Return all employees with a salary greater than 5000.
+
+##### **CASE IN ORDER BY (Example)**
+
+```sql
+SELECT Employee, Salary
+FROM Employees
+ORDER BY
+  CASE
+    WHEN Salary > 5000 THEN 1  -- High salary comes first
+    WHEN Salary BETWEEN 3000 AND 5000 THEN 2  -- Average salary comes second
+    ELSE 3  -- Low salary comes last
+  END;
+```
+
+Result:
+
+| Employee | Salary |
+|----------|--------|
+| David    | 7000   |
+| Alice    | 5000   |
+| Bob      | 3000   |
+| Charlie  | 1000   |
+
