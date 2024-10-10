@@ -287,4 +287,17 @@ ON
   END;
 ```
 
+##### **CASE with Aggregate Functions (Example)**
 
+Return the total amount of shipped orders.
+
+```sql
+SELECT 
+  SUM(
+    CASE
+      WHEN status = 'Shipped' THEN amount
+      ELSE 0
+    END
+  ) AS Shipped_Amount
+FROM Orders;
+```
