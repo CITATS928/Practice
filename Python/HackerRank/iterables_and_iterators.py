@@ -31,3 +31,30 @@ for element in iterators_list:
     
 result = counter/length_of_list
 print(result)
+
+"""
+improved version:
+
+import itertools
+import sys
+
+input_data = sys.stdin.read().split('\n')
+n = int(input_data[0])
+letters = input_data[1].split()  # list of letters
+k = int(input_data[2])  # number of indices to be selected
+
+# Genrate combination of length k
+combinations = itertools.combinations(letters, k)
+
+# Count the number of combinations that contain 'a'
+count = sum(1 for comb in combinations if 'a' in comb)
+
+# Total Number of Combinations
+total_combinations = len(list(itertools.combinations(letters, k)))
+
+# find the result
+result = count / total_combinations
+
+# Round the result to 3 decimal places
+print(f"{result:.3f}")
+"""
