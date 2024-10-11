@@ -33,6 +33,29 @@ list1.append(4)  # 修改 list1
 print(list2)  # 输出 [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
 ```
 
+---
+
+迭代器（iterator）是一个可以记住遍历的位置的对象。迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。字符串、列表或元组对象都可用于创建迭代器：
+
+它可以逐一返回其中的元素，但它的元素只能被访问一次。换句话说，当你用过迭代器获取元素的时候，它会被消耗掉，并且你无法再次访问已经消耗的元素，除非重新生成迭代器。
+
+```python
+# 创建一个简单的迭代器
+numbers = iter([1, 2, 3, 4])
+
+# 第一次迭代
+for num in numbers:
+    print(num)
+
+# Output: 1 2 3 4
+
+# 再次迭代同一个迭代器
+for num in numbers:
+    print(num)
+
+# Output: 无输出
+```
+
 **itertools groupby**:
 itertools.groupby(iterable, key=None)
 
