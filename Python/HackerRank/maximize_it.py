@@ -2,19 +2,22 @@
 https://www.hackerrank.com/challenges/maximize-it/problem?isFullScreen=true
 
 """
-
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 import sys
+import itertools
 
-list_sum=[]
+lists=[]
+result=[]
 input_data = sys.stdin.read().split('\n')
 
-for i in range(1, len(input_data)):
-    list_sum.append(max(map(int, input_data[i].split())))
+K = int((input_data[0].split())[0])
+M = int((input_data[0].split())[1])
 
-total=0
-for num in list_sum:
-    total+=num*num
-M=(input_data[0].split())[1]
-result=total%int(M)
-print(result)
+for ls in input_data[1:]:
+    lists.append(list(map(int, ls.split())))
+#print(lists)
+
+combination = itertools.product(*lists)
+for comb in combination:
+    result.append(sum(x*x for x in comb)%M)
+print(max(result))
