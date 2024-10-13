@@ -124,7 +124,28 @@ for item in result:
 """
 ```
 
-*lists
+***lists**
 
-map
+unpacking operator (*) 用于解包可迭代对象，它允许我们将可迭代对象作为参数传递给函数或构造函数。
+
+```Python
+# Unpack a list
+numbers = [1, 2, 3]
+print(*numbers)  # Output: 1 2 3
+
+###
+
+def my_function(a, b, c):
+    print(a, b, c)
+
+# Example with lists
+my_list = [1, 2, 3]
+
+# Using * to unpack
+my_function(*my_list)
+
+# Output: 1 2 3
+# *my_list将list[1, 2, 3]解包成了my_function的参数a=1, b=2, c=3。如果没有*，my_function（my_list）会将整个列表作为单个参数传递，则会报错。
+```
+
 
