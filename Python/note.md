@@ -68,6 +68,62 @@ itertools.groupby(iterable, key=None)
 
 **itertools.product**:
 
+return一个itertor, 包含所有可能的组合
+
+```Python
+itertools.product(*iterables, repeat=1)
+# *iterables: 一个或多个可迭代对象(lists, tuples, sets, etc.)
+# repeat: 一个整数，表示重复生成元素的次数, 默认为 1
+```
+
+Example:
+
+```Python
+import itertools
+
+list1 = [1, 2]
+list2 = ['a', 'b']
+list3 = [True, False]
+
+# Compute the Cartesian product
+result = itertools.product(list1, list2, list3)
+
+# Print each combination
+for item in result:
+    print(item)
+
+"""
+(1, 'a', True)
+(1, 'a', False)
+(1, 'b', True)
+(1, 'b', False)
+(2, 'a', True)
+(2, 'a', False)
+(2, 'b', True)
+(2, 'b', False)
+"""
+
+lists = [[1, 2], ['a', 'b'], [True, False]]
+
+# Compute the Cartesian product
+result = itertools.product(*lists)
+
+# Print each combination
+for item in result:
+    print(item)
+
+"""
+(1, 'a', True)
+(1, 'a', False)
+(1, 'b', True)
+(1, 'b', False)
+(2, 'a', True)
+(2, 'a', False)
+(2, 'b', True)
+(2, 'b', False)
+"""
+```
+
 *lists
 
 map
