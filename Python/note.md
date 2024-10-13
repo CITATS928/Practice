@@ -148,4 +148,32 @@ my_function(*my_list)
 # *my_list将list[1, 2, 3]解包成了my_function的参数a=1, b=2, c=3。如果没有*，my_function（my_list）会将整个列表作为单个参数传递，则会报错。
 ```
 
+**map()**
 
+map() 函数接收一个函数和一个可迭代对象，它会对可迭代对象中的每个元素应用函数，并返回一个包含所有函数调用结果的迭代器。
+这是一种在一行代码中处理集合元素（如转换或修改它们）的方法，而无需编写 for 循环。
+
+```Python
+map(function, iterable, ...)
+# function: 想要应用于iterable中每个元素的函数
+# iterable: 一个或多个iterable
+# It returns an iterator
+
+# Example 1: map() with int() to convert strings to integers
+numbers = ['1', '2', '3']
+result = map(int, numbers)
+print(list(result))  # Output: [1, 2, 3]
+
+# Example 2: map() with lambda function
+numbers = [1, 2, 3]
+result = map(lambda x: x * x, numbers)
+print(list(result))  # Output: [1, 4, 9]
+
+# Example 3: map() with custom function
+def square(x):
+    return x * x
+
+numbers = [1, 2, 3]
+result = map(square, numbers)
+print(list(result))  # Output: [1, 4, 9]
+```
