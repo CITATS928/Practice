@@ -14,8 +14,8 @@ K = int((input_data[0].split())[0])
 M = int((input_data[0].split())[1])
 
 for ls in input_data[1:]:
-    lists.append(list(map(int, ls.split())))
-#print(lists)
+    #因为每行第一个数字是这行的长度，所以要去掉第一个数字
+    lists.append(list(map(int, ls[1:].split())))
 
 combination = itertools.product(*lists)
 for comb in combination:

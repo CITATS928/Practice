@@ -65,3 +65,10 @@ itertools.groupby(iterable, key=None)
 
 1. groupby 只对相邻的相同元素进行分组，因此通常需要先对数据进行排序。
 2. groupby 返回的是一个迭代器，它生成 (key, group) 的元组，其中 key 是分组的键，group 是分组的元素。
+
+**itertools.product**:
+
+*lists
+
+map
+
