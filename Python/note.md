@@ -177,3 +177,53 @@ numbers = [1, 2, 3]
 result = map(square, numbers)
 print(list(result))  # Output: [1, 4, 9]
 ```
+
+**join()**
+
+jion is a string method. 允许你将iterable combine or concatenate into a single string. 在每个字符串之间使用指定的分隔符。
+
+```Python
+Syntax: separator.join(iterable)
+# separator: 用于分隔每个元素的字符串，例如空格‘ ’、逗号‘，’，换行符‘\n’等。
+# iterable: 要链接的字符串列表、元组、集合等。
+# It returns a new string，结合了iterable的所有元素，由指定的separator分隔
+
+# Example 1: Joining a list of words with spaces
+words = ['Python', 'is', 'fun']
+
+# Joining with space separator
+result = ' '.join(words)
+print(result)  # Output: Python is fun
+
+
+
+# Example 2: Joining with newlines (\n)
+words = ['Python', 'is', 'fun']
+
+# Joining with newline separator
+result = '\n'.join(words)
+print(result)
+"""
+Output:
+Python
+is
+fun
+"""
+
+# Example 4: Using join() with characters
+characters = ['P', 'y', 't', 'h', 'o', 'n']
+
+# Joining with empty separator
+result = ''.join(characters)
+print(result)  # Output: Python
+
+
+
+
+# Example 5: Joining non-string elements    
+numbers = [1, 2, 3]
+
+# Joining with a comma separator
+result = ', '.join(map(str, numbers))
+print(result)  # Output: 1, 2, 3
+```
