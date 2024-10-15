@@ -178,7 +178,7 @@ result = map(square, numbers)
 print(list(result))  # Output: [1, 4, 9]
 ```
 
-**join()**
+**str.join()**
 
 jion is a string method. 允许你将iterable combine or concatenate into a single string. 在每个字符串之间使用指定的分隔符。
 
@@ -226,4 +226,36 @@ numbers = [1, 2, 3]
 # Joining with a comma separator
 result = ', '.join(map(str, numbers))
 print(result)  # Output: 1, 2, 3
+```
+
+**str.center()**
+
+center() 方法用于将字符串居中，并使用指定的填充字符（默认为空格）填充空格。
+
+```Python
+Syntax: string.center(width, fillchar=‘ ‘)
+# width: the total width of the result string (包括填充字符)
+# fillchar（可选）: 用于填充的字符，默认为空格。
+# It returns a string
+
+# Example 1: Basic
+string = 'Hello'
+centered_string = string.center(11)
+print(centered_string)  # Output: '   Hello   '
+# Hello字长5，总共11个字符，所以两边各有3个空格
+
+
+
+# Example 2: With custom fillchar
+string = 'Hello'
+centered_string = string.center(11, '-')
+print(centered_string)  # Output: '---Hello---'
+
+
+
+# Example 3: With odd width
+string = 'Hello'
+centered_string = string.center(10, '*')
+print(centered_string)  # Output: '**Hello***'
+#当填充所需的额外空格或字符为奇数时，Python 会在右侧添加更多字符以平衡它。
 ```
