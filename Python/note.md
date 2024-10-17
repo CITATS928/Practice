@@ -259,3 +259,68 @@ centered_string = string.center(10, '*')
 print(centered_string)  # Output: '**Hello***'
 #当填充所需的额外空格或字符为奇数时，Python 会在右侧添加更多字符以平衡它。
 ```
+
+**formatted string literals & format()**
+
+在python的格式化字符串中（f-string）和format() method中，可以使用大括号 {} 来插入变量。在大括号中，可以包含表达式，变量名，甚至函数调用。还有许多选项可以自定义数字和字符串的显示方式。
+
+```Python
+# 对齐选项
+# <: 左对齐 (default for strings)
+# >: 右对齐 (default for numbers)
+# ^: 居中对齐
+# =: 在符号后填充，例如在正数前加上符号
+
+value = 42
+
+# 左对齐 (默认为字符串)
+print(f'{value:<5}')  # Output: "42   "
+
+# 右对齐 (默认为数字)
+print(f'{value:>5}')  # Output: "   42"
+
+# 居中对齐
+print(f'{value:^5}')  # Output: " 42  "
+
+# 在符号后填充
+value = -42
+print(f'{value:=5}')  # Output: "-  42"
+
+
+# 符号选项
+# +: 显示正数和负数的符号
+# -: 只显示负数的符号
+# 空格: 正数前加空格，负数前加负号
+
+value = 42
+
+# 显示正数和负数的符号
+print(f'{value:+}')  # Output: "+42"
+print(f'{-value:+}') # Output: "-42"
+
+# 只显示负数的符号
+print(f'{value:-}')  # Output: "42"
+print(f'{-value:-}') # Output: "-42"
+
+# 正数前加空格，负数前加负号
+print(f'{value: }')  # Output: " 42"
+print(f'{-value: }') # Output: "-42"
+
+
+# 宽度和填充
+# width 是该值占用的总字符数，fillchar 是用于填充的字符
+
+value = 42
+
+# 宽度为 5，填充为 0
+print(f'{value:05}')  # Output: "00042"
+
+# 宽度为 5，填充为 *
+print(f'{value:*<5}')  # Output: "42***"
+
+# 宽度为 5，填充为 *
+print(f'{value:*>5}')  # Output: "***42"
+
+# 宽度为 5，填充为 *
+print(f'{value:*^5}')  # Output: "*42**"
+```
