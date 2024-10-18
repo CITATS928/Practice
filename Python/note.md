@@ -323,4 +323,60 @@ print(f'{value:*>5}')  # Output: "***42"
 
 # 宽度为 5，填充为 *
 print(f'{value:*^5}')  # Output: "*42**"
+
+
+
+# 类型转换：
+# d: Integer十进制整数
+# o: Octal八进制整数
+# X: Hexadecimal十六进制整数（大写）
+# x: Hexadecimal十六进制整数（小写）
+# b: Binary二进制整数
+# e: Scientific notation科学计数法（小写）
+# E: Scientific notation科学计数法（大写）
+# f: Float浮点数
+# F: Float浮点数
+# g: General format一般格式（小写）
+# G: General format一般格式（大写）
+# %: Percentage百分比
+
+value = 42
+
+# Decimal
+print(f'{value:d}')  # Output: "42"
+
+# Octal
+print(f'{value:o}')  # Output: "52"
+
+# Hexadecimal (uppercase and lowercase)
+print(f'{value:X}')  # Output: "2A"
+print(f'{value:x}')  # Output: "2a"
+
+# Binary
+print(f'{value:b}')  # Output: "101010"
+
+# Exponential notation
+print(f'{value:e}')  # Output: "4.200000e+01"
+print(f'{value:E}')  # Output: "4.200000E+01"
+
+# Fixed-point notation
+print(f'{value:f}')  # Output: "42.000000"
+
+
+
+# Precision精度
+# 用于控制浮点数的小数位数
+# .n: n 是要显示的小数位数
+value = 3.141592653589793
+
+# Default floating-point precision (6 digits)
+print(f'{value:f}')   # Output: "3.141593"
+
+# Limit to 2 decimal places
+print(f'{value:.2f}') # Output: "3.14"
+
+# Scientific notation with 3 decimal places
+print(f'{value:.3e}') # Output: "3.142e+00"
+
+
 ```
