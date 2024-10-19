@@ -26,7 +26,8 @@ def print_rangoli(size):
         remove_middle(full_list)
         line='-'.join(full_list).center(width_full_list,'-')
         print(line)
-    
+    ###### sudo for upper half
+    #when adding line, add a copy to a list, then print the list in reverse order
 
 if __name__ == '__main__':
     n = int(input())
