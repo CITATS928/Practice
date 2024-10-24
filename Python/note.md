@@ -380,3 +380,31 @@ print(f'{value:.3e}') # Output: "3.142e+00"
 
 
 ```
+
+**str.split()**
+
+用于根据指定的分隔符将String拆分为a list of substrings，如果没有指定分隔符，则默认使用whitespace (spaces, tabs, or newlines)。
+It returns a list of substrings.
+
+```Python
+Syntax: string.split(separator, maxsplit)
+# separator (可选): 用于拆分字符串的分隔符，默认为whitespace
+# maxsplit (可选): 所需的最大拆分数。如果未提供，则进行所有可能的拆分。
+
+# Example 1: Splitting a string without a separator
+string = 'Python is fun'
+result = string.split()
+print(result)  # Output: ['Python', 'is', 'fun']
+
+# Example 2: Using maxsplit
+string = "one two three four five"
+result = string.split(' ', 2)
+print(result)  # Output: ['one', 'two', 'three four five']
+
+# Example 3: Splitting with Multiple Spaces
+string = "   Python   is   fun   "
+result = string.split()
+print(result)  # Output: ['Python', 'is', 'fun']
+
+result = string.split(' ')
+print(result)  # Output: ['', '', '', 'Python', '', '', 'is', '', '', 'fun', '', '']
