@@ -408,3 +408,46 @@ print(result)  # Output: ['Python', 'is', 'fun']
 
 result = string.split(' ')
 print(result)  # Output: ['', '', '', 'Python', '', '', 'is', '', '', 'fun', '', '']
+```
+
+**ord() & chr()**
+
+ord() 函数返回一个字符的ASCII or Unicode value.
+ord()的作用
+-按ASCII值比较字符
+-将字符转换为整数，以遍历字母表
+-对字符进行排序，对数据进行编码
+
+chr() 函数返回ASCII or Unicode value对应的字符。
+chr()的作用
+-将ASCII值转换为字符
+-将数据储存为ASCII，chr()将其转换回字符
+
+```Python
+ord() Syntax: ord(character)
+chr() Syntax: chr(number)
+
+# Example 1: Using ord()
+print(ord('a'))  # Output: 97
+print(ord('A'))  # Output: 65
+print(ord('0'))  # Output: 48
+
+# Example 2: Using chr()
+print(chr(97))  # Output: 'a'
+print(chr(65))  # Output: 'A'
+print(chr(48))  # Output: '0'
+
+# Example 3: Using ord() and chr() together
+# 迭代字母表
+for i in range(ord('a'), ord('z') + 1):
+    print(chr(i), end=" ")
+ord('a')为97，ord('z')为122，使用 range（97， 123） 来迭代这些值。chr（i） 将每个值转换回其对应的字符
+
+# Example 4: Using ord() and chr() 
+# 小写字母转换为大写字母
+char = 'b'
+uppercase_char = chr(ord(char) - 32)
+print(uppercase_char)  # Output: 'B'
+大写字母和小写字母的 ASCII 值用 32 分隔，减去 32 会将小写字母转换为其大写字母。
+```
+
