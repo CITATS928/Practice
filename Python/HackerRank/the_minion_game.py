@@ -50,3 +50,8 @@ def minion_game(string):
 if __name__ == '__main__':
     s = input()
     minion_game(s)
+
+
+
+# Improve:
+# 在建立元音组的时候，使用了list，可以使用set，这样查找元音的时间复杂度会更低。Because sets use hash tables for lookups
