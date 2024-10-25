@@ -28,12 +28,14 @@ def minion_game(string):
     
     for i in range(len(string)):
         if string[i] in vowels:
-            for j in range(i,len(string)):
-                kevin_score+=1
+            kevin_score+=len(string)-i
+            #for j in range(i,len(string)):
+                #kevin_score+=1
                 #print(string[i:j+1])
         if string[i] not in vowels:
-            for k in range(i, len(string)):
-                stuart_score+=1
+            stuart_score+=len(string)-i
+            #for k in range(i, len(string)):
+                #stuart_score+=1
                 #print(string[i:k+1])
     
     if kevin_score>stuart_score:
