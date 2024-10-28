@@ -550,3 +550,33 @@ print(uppercase_char)  # Output: 'B'
 | 124        | \|         |
 | 125        | }         |
 | 126        | ~         |
+
+**dict.fromkeys()**
+
+fromkeys() 方法用于创建一个新字典，其中包含指定键的值。如果未提供值，则默认为 None。
+
+```Python
+Syntax: dict.fromkeys(keys, value)
+# keys（必须）: 可作为新字典的key的可迭代对象
+# value（可选）: 用于设置所有键的值。默认为 None。
+
+# Example 1: Using fromkeys() with a list
+keys = ['name', 'age', 'city']
+new_dict = dict.fromkeys(keys)
+print(new_dict)  # Output: {'name': None, 'age': None, 'city': None}
+
+# Example 2: Using fromkeys() with a tuple
+keys = ('name', 'age', 'city')
+new_dict = dict.fromkeys(keys)
+print(new_dict)  # Output: {'name': None, 'age': None, 'city': None}
+
+# Example 3: Using fromkeys() with a string
+keys = 'name'
+new_dict = dict.fromkeys(keys)
+print(new_dict)  # Output: {'n': None, 'a': None, 'm': None, 'e': None}
+
+# Example 4: Using fromkeys() with a string and value
+keys = 'name'
+new_dict = dict.fromkeys(keys, 1)
+print(new_dict)  # Output: {'n': 1, 'a': 1, 'm': 1, 'e': 1}
+```
