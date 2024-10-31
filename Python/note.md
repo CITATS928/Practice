@@ -580,3 +580,72 @@ keys = 'name'
 new_dict = dict.fromkeys(keys, 1)
 print(new_dict)  # Output: {'n': 1, 'a': 1, 'm': 1, 'e': 1}
 ```
+
+**zip()**
+
+zip() 用于将多个iterables合并为一个元组列表。它返回一个元组的迭代器。每个 Tuples 都包含来自同一位置的每个提供的可迭代对象的元素。
+
+\*是解包操作符，它允许您将可迭代对象解包为单独的元素。在 zip() 中使用\* 可以将元组列表解包为单独的列表。
+
+```Python
+Syntax: zip(iterable1, iterable2, ...)
+# iterable1, iterable2, ...: 一个或多个可迭代对象，它们可以是列表、元组、字符串等。
+# returns an iterator of tuples. You can convert it to a list or use it directly in a loop.
+
+# Example 1: Using zip() with two lists
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+
+zipped = zip(names, ages)
+print(list(zipped))
+# Output: [('Alice', 25), ('Bob', 30), ('Charlie', 35)]
+
+# Example 2: Using zip() with three lists
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+cities = ["New York", "Los Angeles", "Chicago"]
+
+zipped = zip(names, ages, cities)
+print(list(zipped))
+# Output: [('Alice', 25, 'New York'), ('Bob', 30, 'Los Angeles'), ('Charlie', 35, 'Chicago')]
+
+# Example 3: Using zip() with different length lists
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30]
+
+zipped = zip(names, ages)
+print(list(zipped))
+# Output: [('Alice', 25), ('Bob', 30)]
+# zip() 会在最短的可迭代对象结束时停止，因此在这种情况下，Charlie 不会包含在结果中。
+
+# Example 4: Using zip() with strings
+string1 = "abc"
+string2 = "123"
+
+zipped = zip(string1, string2)
+print(list(zipped))
+# Output: [('a', '1'), ('b', '2'), ('c', '3')]
+
+# Example 5: Using zip() with a list and a string
+names = ["Alice", "Bob", "Charlie"]
+string = "123"
+
+zipped = zip(names, string)
+print(list(zipped))
+# Output: [('Alice', '1'), ('Bob', '2'), ('Charlie', '3')]
+
+# Example 6: Using zip() in a Loop
+for name, age in zip(names, ages):
+    print(f"{name} is {age} years old.")
+# Output:
+# Alice is 25 years old.
+# Bob is 30 years old.
+
+# Example 7: Unzipping with zip(*...)
+zipped_list = [('Alice', 25), ('Bob', 30), ('Charlie', 35)]
+names, ages = zip(*zipped_list)
+print(names)  # ('Alice', 'Bob', 'Charlie')
+print(ages)   # (25, 30, 35)
+# zip（*zipped_list） 将每个元组的第一个元素分成一个列表 （names），将第二个元素分成另一个列表 （ages）。
+```
+
