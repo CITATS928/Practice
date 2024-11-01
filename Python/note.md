@@ -649,3 +649,35 @@ print(ages)   # (25, 30, 35)
 # zip（*zipped_list） 将每个元组的第一个元素分成一个列表 （names），将第二个元素分成另一个列表 （ages）。
 ```
 
+**eval()**
+
+eval() 函数用于执行一个字符串表达式，并返回表达式的值。
+它可以执行动态代码并返回计算表达式的结果，但是它可能会有安全风险，因此应谨慎使用。
+
+```Python
+Syntax: eval(expression, globals=None, locals=None)
+# expression: 要执行的表达式字符串
+# globals（可选）: 全局变量的字典（用于控制 eval（） 可以访问的变量）。如果未提供，则默认为 globals（）。
+# locals（可选）: 局部变量的字典（用于控制 eval（） 可以访问的变量）。如果未提供，则默认为 locals（）。
+
+# Example 1: Using eval() with a simple expression
+print(eval("3 + 5"))        # Output: 8
+print(eval("10 * (2 + 3)")) # Output: 50
+
+# Example 2: Using eval() with variables
+x = 10
+print(eval("x + 5"))  # Output: 15
+
+# Example 3: Using eval() with built-in functions
+print(eval("len([1, 2, 3, 4])"))  # Output: 4
+print(eval("min(3, 5, 7, 2)"))    # Output: 2
+
+# Example 4: Using eval() with a dictionary
+x = 5
+safe_dict = {"x": x, "max": max}
+
+print(eval("max(10, x)", safe_dict))  # Output: 10
+
+#在这种情况下，eval（） 只能访问 x 和 max，因此它不能执行任何其他函数或访问 safe_dict 之外的变量。
+```
+
