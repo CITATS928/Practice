@@ -681,3 +681,32 @@ print(eval("max(10, x)", safe_dict))  # Output: 10
 #在这种情况下，eval（） 只能访问 x 和 max，因此它不能执行任何其他函数或访问 safe_dict 之外的变量。
 ```
 
+**lambda function**
+
+lambda 函数是一种匿名函数，它可以接受任意数量的参数，但只能有一个表达式。
+
+```Python
+Syntax: lambda arguments: expression
+# arguments: 传递给 lambda 函数的参数
+# expression: lambda 函数的主体，它计算并返回结果
+
+# Example 1: Using lambda function with one argument
+square = lambda x: x * x
+print(square(5))  # Output: 25
+
+
+# Example 2: Using lambda function with multiple arguments
+add = lambda x, y: x + y
+print(add(3, 5))  # Output: 8
+
+
+# Example 3: A function with a lambda function
+def my_function(n):
+    return lambda a: a * n
+
+double = my_function(2)
+triple = my_function(3)
+
+print(double(11))  # Output: 22
+print(triple(11))  # Output: 33
+```
