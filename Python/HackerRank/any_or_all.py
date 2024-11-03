@@ -28,3 +28,7 @@ any_palindromic = any(palindromic(num) for num in intls)
 
 print(all_positive and any_palindromic)
 
+# impove the palindromic function
+def palindromic(num):
+    strn=str(num)
+    return strn==strn[::-1]
