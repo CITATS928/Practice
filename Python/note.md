@@ -710,3 +710,53 @@ triple = my_function(3)
 print(double(11))  # Output: 22
 print(triple(11))  # Output: 33
 ```
+
+**Any() & All()**
+
+Any() : 如果可迭代对象中至少有一个元素为 True，则 any()函数返回 True。如果所有元素均为 False，则返回 False。如果可迭代对象为空，则 any()返回 False。
+
+All() : 如果可迭代对象中所有元素均为 True，则 all()函数返回 True。如果有一个元素为 False，则返回 False。如果可迭代对象为空，则 all()返回 True。
+
+```Python
+any() Syntax: any(iterable)
+any将会遍历 iterable 的每个元素，一旦找到 True 值，它就会停止检查并返回 True。如果未找到任何 True 值，则返回 False。
+
+# Example 1: With a list of booleans
+print(any([False, False, True, False]))  # Output: True (because there’s at least one `True` value)
+
+# Example 2: Checking for positive numbers
+numbers = [-1, -2, -3, 4]
+print(any(num > 0 for num in numbers))  # Output: True (4 is positive)
+
+# Example 3: Empty list
+print(any([]))  # Output: False (no elements to check)
+
+# Example 4: With a list of booleans
+# Check if there’s any even number in the list
+numbers = [1, 3, 5, 7, 8]
+has_even = any(num % 2 == 0 for num in numbers)
+print(has_even)  # Output: True (because 8 is even)
+
+
+##############################
+
+all() Syntax: all(iterable)
+all() 将遍历 iterable 的每个元素，一旦找到 False 值，它就会停止检查并返回 False。如果未找到任何 False 值，则返回 True。
+
+# Example 1: With a list of booleans
+print(all([True, True, True]))  # Output: True (all elements are `True`)
+print(all([True, False, True])) # Output: False (because there’s a `False` value)
+
+# Example 2: Checking if all numbers are positive
+numbers = [1, 2, 3, 4]
+print(all(num > 0 for num in numbers))  # Output: True (all numbers are positive)
+
+# Example 3: Empty list
+print(all([]))  # Output: True (no elements to check, so it defaults to True)
+
+# Example 4: With a list of booleans
+# Check if all numbers in a list are even
+numbers = [2, 4, 6, 8]
+all_even = all(num % 2 == 0 for num in numbers)
+print(all_even)  # Output: True (all numbers are even)
+```
