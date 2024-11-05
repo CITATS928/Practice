@@ -1,5 +1,5 @@
 """
-
+https://www.hackerrank.com/challenges/ginorts/problem?isFullScreen=true
 """
 
 import sys
