@@ -67,4 +67,36 @@ input_data = sys.stdin.read().strip()
 sorted_string = ''.join(sorted(input_data, key=sort_key))
 
 print(sorted_string)
+
+
+
+解释：
+
+当排序的key是一个tuple的时候，会按照以下规则来排序：
+1. 按照tuple的第一个元素tuple[0]来排序
+2. 如果第一个元素相同，再按照第二个元素tuple[1]来排序
+3. 如果第二个元素相同，再按照第三个元素tuple[2]来排序
+.....
+
+在这道题中,tuple返回的是一个三元组，分别是：
+1. type_priority：先比较字符的类型（小写字母、大写字母、数字）。
+2. digit_priority：在数字类型中，再比较奇偶性（奇数排在偶数前）。
+3. char：如果前两个优先级相同，则按字符的字母顺序或数字大小排序。
+
+如果string是Sorting1234， 那么sorted(input_data, key=sort_key)会返回一系列的tuple，如下：
+对每个字符应用 sort_key
+[
+    sort_key('S'),     # (1, 0, 'S')
+    sort_key('o'),     # (0, 0, 'o')
+    sort_key('r'),     # (0, 0, 'r')
+    sort_key('t'),     # (0, 0, 't')
+    sort_key('i'),     # (0, 0, 'i')
+    sort_key('n'),     # (0, 0, 'n')
+    sort_key('g'),     # (0, 0, 'g')
+    sort_key('1'),     # (2, 0, '1')
+    sort_key('2'),     # (2, 1, '2')
+    sort_key('3'),     # (2, 0, '3')
+    sort_key('4')      # (2, 1, '4')
+]
+
 """
