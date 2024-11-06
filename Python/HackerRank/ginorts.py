@@ -37,3 +37,34 @@ odd.sort()
 # 打印排序后的结果
 print(''.join(low+cap+odd+even))
 
+"""
+improved version:
+
+import sys
+
+def sort_key(char):
+    # 根据char的类型来决定优先级
+    if char.islower():
+        type_priority = 0
+    elif char.isupper():
+        type_priority = 1
+    elif char.isdigit():
+        type_priority = 2
+
+    # 当是数字的时候，根据奇偶性来决定优先级
+    if char.isdigit():
+        dig_priority = 0 if int(char) % 2 != 0 else 1
+    else:
+        dig_priority = 0
+
+    # 返回一个元组，元组的第一个元素是type_priority，第二个元素是dig_priority，第三个元素是char
+    return (type_priority, dig_priority, char)
+
+# 读取输入
+input_data = sys.stdin.read().strip()
+
+# 使用sort_key函数来排序
+sorted_string = ''.join(sorted(input_data, key=sort_key))
+
+print(sorted_string)
+"""
