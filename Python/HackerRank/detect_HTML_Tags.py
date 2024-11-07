@@ -12,5 +12,6 @@ def remove_comment(string):
 input_data = sys.stdin.read().split('\n')
 line_count = input_data[0]
 
-input_data = [remove_comment(line) for line in input_data[1:] if remove_comment(line)]
+input_data = remove_comment('\n'.join(input_data[1:])).splitlines()
+
 print(input_data)
