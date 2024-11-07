@@ -15,3 +15,14 @@ line_count = input_data[0]
 input_data = remove_comment('\n'.join(input_data[1:])).splitlines()
 
 print(input_data)
+
+merged_line = []
+temp=''
+    
+for line in input_data:
+    temp+=line.strip()
+    if temp.endswith('>'):
+        merged_line.append(temp)
+        temp=''
+    else:
+        temp+=' '
