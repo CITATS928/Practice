@@ -32,4 +32,10 @@ attr_pattern = r'(\w+)="(.*?)"'
 
 for line in merged_line:
     for tag_match in re.findall(tag_pattern, line):
+        tag_name = tag_match[0]
+        tag_attr = tag_match[1]
         print(tag_match)
+
+        attr_list = re.findall(attr_pattern, tag_attr)
+
+    
