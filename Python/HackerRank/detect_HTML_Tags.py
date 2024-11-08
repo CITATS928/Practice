@@ -26,3 +26,10 @@ for line in input_data:
         temp=''
     else:
         temp+=' '
+
+tag_pattern = r'<(\w+)(.*?)>'
+attr_pattern = r'(\w+)="(.*?)"'
+
+for line in merged_line:
+    for tag_match in re.findall(tag_pattern, line):
+        print(tag_match)
