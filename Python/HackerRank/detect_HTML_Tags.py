@@ -14,7 +14,7 @@ line_count = input_data[0]
 
 input_data = remove_comment('\n'.join(input_data[1:])).splitlines()
 
-print(input_data)
+#print(input_data)
 
 merged_line = []
 temp=''
@@ -34,8 +34,9 @@ for line in merged_line:
     for tag_match in re.findall(tag_pattern, line):
         tag_name = tag_match[0]
         tag_attr = tag_match[1]
-        print(tag_match)
+        print(tag_name)
 
         attr_list = re.findall(attr_pattern, tag_attr)
 
-    
+        for name, value in attr_list:
+            print(f'-> {name} > {value}')
