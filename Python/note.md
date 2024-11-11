@@ -760,3 +760,36 @@ numbers = [2, 4, 6, 8]
 all_even = all(num % 2 == 0 for num in numbers)
 print(all_even)  # Output: True (all numbers are even)
 ```
+
+**Collections.Counter**
+是一个字典的子类，用于计数可哈希对象。旨在计算可迭代对象中项目的出现次数。当你想快速获取列表、元组或任何可迭代对象中每个元素的计数时，它非常有用。
+
+```Python
+from collections import Counter
+
+# Example 1: Counting a list of numbers
+numbers = [1, 2, 3, 1, 2, 3, 4, 1]
+counter = Counter(numbers)
+print(counter)  # Output: Counter({1: 3, 2: 2, 3: 2, 4: 1})
+
+# Example 2: Counting a list of strings
+items = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
+
+# Use Counter to count occurrences
+item_counts = Counter(items)
+print(item_counts)  # Output: Counter({'apple': 3, 'banana': 2, 'orange': 1})
+
+#Counter.most_common（n））：以元组列表的形式返回 n 个最常见的元素。
+print(item_counts.most_common(2))  # [('apple', 3), ('banana', 2)]
+
+#访问项目的计数，例如字典。
+print(item_counts['apple'])  # Output: 3
+
+#更新计数：可以添加或减去计数
+item_counts['apple'] += 1
+print(item_counts['apple'])  # Output: 4
+
+item_counts.update(['apple', 'orange'])
+print(item_counts)  # Output: Counter({'apple': 5, 'banana': 2, 'orange': 2})
+```
+
