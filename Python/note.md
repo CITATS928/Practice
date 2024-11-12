@@ -793,3 +793,54 @@ item_counts.update(['apple', 'orange'])
 print(item_counts)  # Output: Counter({'apple': 5, 'banana': 2, 'orange': 2})
 ```
 
+**Dictionary**
+    
+```Python
+# Creating an empty dictionary
+my_dict = {}
+
+# Creating a dictionary with initial values
+student = {'name': 'Alice', 'age': 25, 'courses': ['Math', 'Science']}
+
+# Accessing Dictionary Items
+print(student['name'])  # Output: Alice
+
+# 如果访问的key不存在，会引发key Error。可以使用get()方法，它会返回None或指定的默认值。
+print(student.get('name'))         # Output: Alice
+print(student.get('GPA', 'N/A'))   # Output: N/A (default if key doesn't exist)
+
+# Adding or Modifying Items
+student['GPA'] = 3.8           # Adding new key-value pair
+student['age'] = 26            # Updating existing key-value pair
+print(student)  # Output: {'name': 'Alice', 'age': 26, 'courses': ['Math', 'Science'], 'GPA': 3.8}
+
+student['courses'].append('History')  # Adding an item to a list
+print(student['courses'])  # Output: ['Math', 'Science', 'History']
+
+# Removing Items
+age = student.pop('age') # Removing a key-value pair
+print(age)            # Output: 26
+del student['GPA']  # Deleting a key-value pair
+print(student)        # Output: {'name': 'Alice', 'courses': ['Math', 'Science']}
+student.clear()      # Clearing the dictionary
+print(student)        # Output: {}
+```
+
+**Dictionary Comprehension**
+
+```Python
+# Example 1: Creating a dictionary with a loop
+squares = {}
+for num in range(1, 6):
+    squares[num] = num * num
+print(squares)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# Example 2: Using dictionary comprehension
+squares = {num: num * num for num in range(1, 6)}
+print(squares)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# Example 3: Using dictionary comprehension with if condition
+even_squares = {num: num * num for num in range(1, 6) if num % 2 == 0}
+print(even_squares)  # Output: {2: 4, 4: 16}
+```
+
