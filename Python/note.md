@@ -793,6 +793,39 @@ item_counts.update(['apple', 'orange'])
 print(item_counts)  # Output: Counter({'apple': 5, 'banana': 2, 'orange': 2})
 ```
 
+**Collections.defaultdict**
+
+它和普通的dict差不多，区别是它会为不存在的键提供一个默认值。这样，当你访问不存在的键时，它不会引发 KeyError，而是返回指定的默认值。
+
+当创建一个 defaultdict 时，你需要指定一个默认工厂函数，它将用于为不存在的键提供默认值。这个函数可以是 int、list、set 等。
+
+```Python
+from collections import defaultdict
+
+# 使用 int 作为默认工厂
+count_dict = defaultdict(int)
+items = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
+
+for item in items:
+    count_dict[item] += 1
+
+print(count_dict)
+# 输出: defaultdict(<class 'int'>, {'apple': 3, 'banana': 2, 'orange': 1})
+
+# 在这里，count_dict[item] += 1 自动将不存在的 item 初始化为 0（因为 int() 默认返回 0），然后再执行加一操作。
+
+# 自动初始化列表
+
+# 使用 list 作为默认工厂
+position_dict = defaultdict(list)
+words = ['a', 'b', 'a', 'a', 'b']
+for index, word in enumerate(words):
+    position_dict[word].append(index)
+
+print(position_dict)
+# 输出: defaultdict(<class 'list'>, {'a': [0, 2, 3], 'b': [1, 4]})
+```
+
 **Dictionary**
     
 ```Python

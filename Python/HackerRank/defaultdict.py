@@ -24,6 +24,10 @@ for word in contain_list:
         print('-1')
 
 
+
+
+
+
 # Improved version:
 
 #简化输入的读取部分。用 splitlines() 来一次性获取所有行
