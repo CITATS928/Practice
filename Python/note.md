@@ -827,7 +827,7 @@ print(position_dict)
 ```
 
 **Dictionary**
-    
+
 ```Python
 # Creating an empty dictionary
 my_dict = {}
@@ -877,3 +877,28 @@ even_squares = {num: num * num for num in range(1, 6) if num % 2 == 0}
 print(even_squares)  # Output: {2: 4, 4: 16}
 ```
 
+**enumerate()**
+
+用于在遍历iterable时，同时获取元素的index和value。它返回一个包含index和value的元组。可以让代码更清晰简洁，避免手动管理index。
+
+```Python
+# Basic Usage
+my_list = ['a', 'b', 'c', 'd']
+for index, value in enumerate(my_list):
+    print(index, value)
+# Output:
+# 0 a
+# 1 b
+# 2 c
+# 3 d
+
+# Specifying the start index
+# enumerate() 默认从 0 开始，但可以通过指定 start 参数来更改起始index。
+for index, value in enumerate(my_list, start=1):
+    print(index, value)
+# Output:
+# 1 a
+# 2 b
+# 3 c
+# 4 d
+```
