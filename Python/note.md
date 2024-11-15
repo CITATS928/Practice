@@ -902,3 +902,21 @@ for index, value in enumerate(my_list, start=1):
 # 3 c
 # 4 d
 ```
+
+**filter()**
+
+filter() 函数用于过滤可迭代对象中的元素。它接收一个函数和一个可迭代对象，然后返回一个迭代器，其中包含仅满足函数条件的元素。
+
+```Python
+Syntax: filter(function, iterable)
+# function: 用于过滤元素的函数
+# iterable: 要过滤的可迭代对象
+# returns an iterator
+
+# Example 1: Using filter() with a list
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Filter even numbers
+even_numbers = filter(lambda x: x % 2 == 0, numbers)
+print(list(even_numbers))  # Output: [2, 4, 6, 8, 10]
+```
