@@ -826,6 +826,76 @@ print(position_dict)
 # 输出: defaultdict(<class 'list'>, {'a': [0, 2, 3], 'b': [1, 4]})
 ```
 
+**collection.namedtuple**
+用来表示不可变的对象（类似于元组）。它的主要特点是：
+
+- 更具可读性：你可以通过属性名称（如 .name、.age）而不是index（如 [0]、[1]）访问值。
+- 节省内存：与dict相比，namedtuple 的存储效率更高。
+- 不可变性：它的字段值不能被更改，类似于tuple。
+
+```
+Syntax: TypeName = namedtuple('TypeName', [field1, field2, ...])
+# TypeName: 类的名字。
+# [field1, field2, ...]: 字段名称列表。可以是字符串列表或单个用空格分隔的字符串。
+
+# 两种定义字段的方式
+Point = namedtuple('Point', ['x', 'y'])
+Rectangle = namedtuple('Rectangle', 'width height')
+
+p = Point(10, 20)
+print(p.x, p.y)  # 输出: 10 20
+
+r = Rectangle(15, 25)
+print(r.width, r.height)  # 输出: 15 25
+
+
+
+from collections import namedtuple
+
+# 创建一个 namedtuple 类型
+Person = namedtuple('Person', ['name', 'age', 'city'])
+
+# 创建 Person 实例
+person1 = Person(name='Alice', age=30, city='New York')
+
+# 访问字段
+print(person1.name)  # 输出: Alice
+print(person1.age)   # 输出: 30
+
+# 像tuple一样访问字段
+print(person1[0])  # 输出: Alice
+print(person1[1])  # 输出: 30
+
+# 使用 _fields 查看字段名称
+print(person1._fields)  # 输出: ('name', 'age', 'city')
+
+# 将一个dict转换为 namedtuple
+data = {'name': 'Bob', 'age': 25, 'city': 'Los Angeles'}
+person2 = Person(**data)
+print(person2)  # 输出: Person(name='Bob', age=25, city='Los Angeles')
+
+
+# Example: 
+Point = namedtuple('Point', ['x', 'y'])
+p = Point(1, 2)
+
+# _fields: 查看所有字段的名称
+print(p._fields)  # 输出: ('x', 'y')
+
+# _asdict: 将namedtuple转换成dict
+print(p._asdict())  # 输出: {'x': 1, 'y': 2}
+
+# _replace: 返回一个新的 namedtuple，修改指定字段。
+new_p = p._replace(x=10)
+print(new_p)  # 输出: Point(x=10, y=2)
+
+# _make: 从一个可迭代对象创建namedtuple
+data = [10, 20]
+p = Point._make(data)
+print(p)  # 输出: Point(x=10, y=20)
+```
+
+
 **Dictionary**
 
 ```Python
