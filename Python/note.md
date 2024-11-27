@@ -124,6 +124,29 @@ for item in result:
 """
 ```
 
+**itertools.permutations**:
+用于生成给定input的排列（permutations）。是所有可能的顺序组合，组合不考虑顺序。
+会return一个迭代器（里面的内容为tuple），包含所有可能的排列。如果想查看，可以用list()转换为list。
+
+```Python
+Syntax: itertools.permutations(iterable, r=None)
+# iterable: 一个可迭代对象，例如list、tuple、string等。
+# r: 一个整数，表示生成的排列的长度。如果不指定，默认为 len(iterable)，生成所有可能的排列。
+
+from itertools import permutations
+
+data = 'ABC'
+result = permutations(data)
+
+# 转为列表查看结果
+print(list(result))
+# [('A', 'B', 'C'), ('A', 'C', 'B'), ('B', 'A', 'C'), ('B', 'C', 'A'), ('C', 'A', 'B'), ('C', 'B', 'A')]
+
+result = permutations(data, 2)
+print(list(result))
+# [('A', 'B'), ('A', 'C'), ('B', 'A'), ('B', 'C'), ('C', 'A'), ('C', 'B')]
+```
+
 ***lists**
 
 unpacking operator (*) 用于解包可迭代对象，它允许我们将可迭代对象作为参数传递给函数或构造函数。
