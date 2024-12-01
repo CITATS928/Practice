@@ -15,3 +15,6 @@ class Solution:
                 break
         return ''.join(s)
     
+# 优化
+# 交换两个元素的值：s[i], s[i+1] = s[i+1], s[i]，可以省略temp
+        s[i], s[i+1] = s[i+1], s[i]
