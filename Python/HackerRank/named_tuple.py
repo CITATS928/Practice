@@ -1,6 +1,6 @@
-“”“
-https://www.hackerrank.com/challenges/py-collections-namedtuple/problem?isFullScreen=true
-”“”
+
+# https://www.hackerrank.com/challenges/py-collections-namedtuple/problem?isFullScreen=true
+
 
 import sys
 from collections import namedtuple
