@@ -11,3 +11,19 @@ class Solution:
                 # print(f'count i is {num.count(str(i))}')
                 return False
         return True
+    
+
+# with collection.Counter()
+
+import collections
+class Solution:
+    def digitCount(self, num: str) -> bool:
+        counter = collections.Counter(num)
+
+        print(counter)
+        for i in range(len(num)):
+            if int(num[i])!=int(counter.get(str(i),0)):
+                print(num[i])
+                print(counter[i])
+                return False
+        return True
