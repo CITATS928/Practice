@@ -13,3 +13,11 @@ class Solution:
                 return False
             else:
                 return True
+            
+# 使用ord()，将字母转换为数字。再行列相加判断odd even
+
+class Solution:
+    def squareIsWhite(self, coordinates: str) -> bool:
+        col = ord(coordinates[0])-ord('a')+1
+        row = int(coordinates[1])
+        return (col+row)%2==1
