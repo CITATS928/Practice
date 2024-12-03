@@ -31,3 +31,10 @@ class Solution:
         # print(result)
         return result
     
+
+
+# 优化：
+# 省略set_table和set_food，直接使用ordered_table = sorted(set(int(number) for _, number, _ in orders)) 和 ordered_food = sorted(set(food for _, _, food in orders))
+
+# 创建result的时候：result = [['Table'] + ordered_food]直接构成nested list，省略append
+# 最后的loop里省略append，直接result.append([str(table)] + [str(new_dict[table][food]) for food in ordered_food])
