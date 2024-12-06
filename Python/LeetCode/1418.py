@@ -3,7 +3,7 @@
 
 from collections import defaultdict
 class Solution:
-    def displayTable(self, orders: List[List[str]]) -> List[List[str]]:
+    def displayTable(self, orders: list[list[str]]) -> list[list[str]]:
         set_table = set()
         set_food = set()
         for _, number, food in orders:
