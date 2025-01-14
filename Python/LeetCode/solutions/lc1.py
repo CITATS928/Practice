@@ -17,7 +17,7 @@ class Solution:
 # 如果见过，直接返回它的index和当前数字的index
 # 如果没见过，把当前数字储存在字典中，等待下次遍历
 
-class Solution:
+class Solution2:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         dic = {}
 
