@@ -1,8 +1,13 @@
+import sys
+# sys.path.append('/Users/charlesmac/Coding/Python/Practice/Python/LeetCode/solutions')
+
+
+
 import unittest
 from solutions.lc1 import Solution
-
 class TestTwoSum(unittest.TestCase):
-    def setup(self):
+
+    def setUp(self):
         self.solution = Solution()
 
     def test_example1(self):
@@ -22,3 +27,6 @@ class TestTwoSum(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+    
+# in terminal, current directory: Python/LeetCode
+# run: python -m unittest tests.test_lc1
