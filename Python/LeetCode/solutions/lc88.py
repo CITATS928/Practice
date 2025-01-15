@@ -15,7 +15,7 @@ class Solution:
 # 从后往前遍历，比较nums1和nums2的元素大小，将较大的元素放到nums1的最后一个位置。
 # 如果nums1遍历完，nums2还有剩余元素，将剩余元素放到nums1的最前面。
 
-class Solution:
+class Solution2:
     def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
         p1 = m-1 # nums1的最后一个有效元素
         p2 = n-1 # nums2的最后一个元素
