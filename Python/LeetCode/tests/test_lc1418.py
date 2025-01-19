@@ -23,4 +23,17 @@ class TestDisplayTable(unittest.TestCase):
         self.assertEqual(self.solution.displayTable(orders), excepted)
 
     def test_example2(self):
-        pass
+        orders = [["David", "3", "Ceviche"]]
+        expected = [["Table", "Ceviche"], ["3", "1"]]
+        self.assertEqual(self.solution.displayTable(orders), expected)
+    
+    def test_example3(self):
+        orders = [["David", "3", "Ceviche"], ["Corina", "3", "Ceviche"], ["Alice", "5", "Ceviche"]]
+        expected = [["Table", "Ceviche"], ["3", "2"], ["5", "1"]]
+        self.assertEqual(self.solution.displayTable(orders), expected)
+
+    def test_example4(self):
+        orders = []
+        expected = [["Table"]]
+        self.assertEqual(self.solution.displayTable(orders), expected)
+
