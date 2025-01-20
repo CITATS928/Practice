@@ -24,12 +24,23 @@ class TestDisplayTable(unittest.TestCase):
 
     def test_example2(self):
         orders = [["David", "3", "Ceviche"]]
-        expected = [["Table", "Ceviche"], ["3", "1"]]
+        expected = [
+            ["Table", "Ceviche"], 
+            ["3", "1"]
+            ]
         self.assertEqual(self.solution.displayTable(orders), expected)
     
     def test_example3(self):
-        orders = [["David", "3", "Ceviche"], ["Corina", "3", "Ceviche"], ["Alice", "5", "Ceviche"]]
-        expected = [["Table", "Ceviche"], ["3", "2"], ["5", "1"]]
+        orders = [
+            ["David", "3", "Ceviche"], 
+            ["Corina", "3", "Ceviche"], 
+            ["Alice", "5", "Ceviche"]
+            ]
+        expected = [
+            ["Table", "Ceviche"], 
+            ["3", "2"], 
+            ["5", "1"]
+            ]
         self.assertEqual(self.solution.displayTable(orders), expected)
 
     def test_example4(self):
@@ -37,3 +48,7 @@ class TestDisplayTable(unittest.TestCase):
         expected = [["Table"]]
         self.assertEqual(self.solution.displayTable(orders), expected)
 
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -22,8 +22,8 @@ class TestDigitCount(unittest.TestCase):
 
     def test_example4(self):
         num = "0000"
-        # expect True
-        self.assertEqual(self.solution.digitCount(num), True)
+        # expect False
+        self.assertEqual(self.solution.digitCount(num), False)
 
 if __name__ == '__main__':
     unittest.main()
